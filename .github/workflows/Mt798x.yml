@@ -25,7 +25,7 @@ on:
       CONFIG_FILE:
         description: '请选择[seed文件夹内]的配置文件'
         required: true
-        default: '360-t7-108M'
+        default: 'redmi ax6000'
         type: choice
         options:
           - '360-t7-108M'
@@ -35,7 +35,7 @@ on:
           - 'cmcc_rax3000me'
           - 'glinet-gl-xe3000'
           - 'huasifei-wh3000-emmc'
-          - 'jcg-q30'
+          - 'redmi ax6000'
       INFORMATION_NOTICE:
         description: 'Telegram或pushplus信息通知'
         required: true
