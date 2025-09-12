@@ -92,6 +92,13 @@ openwrt-x86-64-generic-squashfs-rootfs.img.gz
 ipk.tar.gz
 openwrt-mediatek-mt7986-xiaomi_redmi-router-ax6000-initramfs-kernel.bin
 openwrt-mediatek-mt7986-xiaomi_redmi-router-ax6000-squashfs-factory.bin
+mediatek-filogic-xiaomi_redmi-router-ax6000-ubootmod-initramfs-factory.ubi
+mediatek-filogic-xiaomi_redmi-router-ax6000-ubootmod-initramfs-recovery.itb
+mt7988-ram-comb-bl2.bin
+mt7986-ram-ddr4-bl2.bin
+mt7986-ram-ddr3-bl2.bin
+mt7981-ram-ddr4-bl2.bin
+mt7981-ram-ddr3-bl2.bin
 EOF
 
 # 在线更新时，删除不想保留固件的某个文件，在EOF跟EOF之间加入删除代码，记住这里对应的是固件的文件路径，比如： rm -rf /etc/config/luci
