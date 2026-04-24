@@ -19,7 +19,7 @@ on:
         default: 'openwrt-25.12'
         type: choice
         options:
-          - 'openwrt-25.120'    
+          - 'openwrt-25.12'    
           - 'openwrt-24.10'
           - 'openwrt-23.05'
           - 'master'
