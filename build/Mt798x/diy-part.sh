@@ -82,6 +82,14 @@ grep -rl '"管理权"' . | xargs -r sed -i 's?"管理权"?"改密码"?g'
 grep -rl '"带宽监控"' . | xargs -r sed -i 's?"带宽监控"?"监控"?g'
 
 
+# === 强行关闭 CCACHE 缓存防止报错 ===
+if [ -f .config ]; then
+    sed -i 's/CONFIG_CCACHE=y/# CONFIG_CCACHE is not set/g' .config
+fi
+
+# 顺便在 feeds 配置文件里也把它彻底抹除（双重保险）
+echo "CONFIG_CCACHE=n" >> .config
+
 # 整理固件包时候,删除您不想要的固件或者文件,让它不需要上传到Actions空间(根据编译机型变化,自行调整删除名称)
 cat >"$CLEAR_PATH" <<-EOF
 packages
