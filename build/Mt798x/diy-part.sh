@@ -8,7 +8,6 @@
 echo 'src-git lucky https://github.com/gdy666/luci-app-lucky.git' >> feeds.conf.default
 echo 'src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main' >> feeds.conf.default
 echo 'src-git momo https://github.com/nikkinikki-org/OpenWrt-momo.git;main' >> feeds.conf.default
-sed -i 's/CONFIG_CCACHE=y/# CONFIG_CCACHE is not set/g' .config
 
 # 后台IP设置
 export Ipv4_ipaddr="192.168.16.1"            # 修改openwrt后台地址(填0为关闭)
