@@ -90,6 +90,16 @@ fi
 # 顺便在 feeds 配置文件里也把它彻底抹除（双重保险）
 echo "CONFIG_CCACHE=n" >> .config
 
+# === 修复红米 AX6000 U-Boot 恒阳微 (Heyangtek) 闪存驱动编译错误 ===
+TARGET_DRIVER="package/boot/uboot-mediatek/src/drivers/mtd/nand/spi/heyangtek.c"
+if [ -f "$TARGET_DRIVER" ]; then
+    echo "发现 Heyangtek 驱动源码，正在修复函数调用错误..."
+    sed -i 's/nanddev_get_ecc_conf/nanddev_to_ecc_conf/g' "$TARGET_DRIVER"
+fi
+
+# 如果上面那个路径没对上（部分源码会解压到 build_dir），做个全局无脑替换
+find . -name "heyangtek.c" -exec sed -i 's/nanddev_get_ecc_conf/nanddev_to_ecc_conf/g' {} +
+
 # 整理固件包时候,删除您不想要的固件或者文件,让它不需要上传到Actions空间(根据编译机型变化,自行调整删除名称)
 cat >"$CLEAR_PATH" <<-EOF
 packages
